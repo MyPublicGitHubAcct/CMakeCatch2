@@ -23,8 +23,7 @@ Tools used to build and maintain this project and could be used on any child pro
 _Text Editor_: [Sublime Text](https://www.sublimetext.com)  
 _Compiler_: [GCC](https://gcc.gnu.org)  
 _Compiler for Embedded_: [ARM GNU Toolchain](https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain)  
-_IDE_ (not needed but a good to use for the actual projects created in this structure one is) : [Clion](https://www.jetbrains.com/clion/)  
-_?_: ?  
+_IDE_ (not needed but a good to use for the actual projects created in this structure one is) : [Clion](https://www.jetbrains.com/clion/)   
 
 ### Submodules
 
@@ -69,7 +68,7 @@ Projects that are not of type Plugin can be tested with
 ## References
 
 - [Example of Testing](https://github.com/cpp-for-yourself/lectures-and-homeworks/blob/main/lectures/googletest.md)
-- [CMake/GoogleText video](https://youtu.be/pxJoVRfpRPE?si=uQlkHhVwrA8shj2B)
+- [CMake/GoogleTest video](https://youtu.be/pxJoVRfpRPE?si=uQlkHhVwrA8shj2B)
 - [Cpp for Yourself Github files](https://github.com/cpp-for-yourself/lectures-and-homeworks/)
 - [Another testing article](https://interrupt.memfault.com/blog/unit-testing-basics)
 - [Testing for Embedded](https://dev.blues.io/blog/embedded-c-unit-testing/)
