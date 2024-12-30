@@ -1,8 +1,21 @@
 # TODO for CMakeCatch2
 
-- Finish the basic setup of embedded so it compiles something.
-- Finish the basic setup of plugin so it compiles something.
-- Finish the basic setup of library so it compiles something.
+## General
+- Scripts so changes to scripts and templates can be updated from Github.
+- Finish the basic setup of Desktop so it compiles something.
+- Finish the basic setup of Embedded so it compiles something.
+- Finish the basic setup of Plugin so it compiles something.
+- Finish the basic setup of Library so it compiles something.
+- Output projects are able to be compiled using a local environment, Docker, or GitHub Actions.
+
+## Desktop template
+- Make simple hello world.
+
+## Embedded template
 - Make the embedded project a hello world (blink) that compiles against ARM's GCC toolchain.
-- ?
-- Testing...testing...
+
+## Plugin template
+- Make simple hello world.
+
+## Library template
+- Make simple hello world.
