@@ -8,6 +8,7 @@ Add this to your project like
 
 ```zsh
 mkdir MyFancyNewProject && cd "$_"
+git init
 git submodule add -b main https://github.com/MyPublicGitHubAcct/CMakeCatch2.git
 python3 CMakeCatch2/scripts/setup_new_repository.py
 ```
