@@ -15,7 +15,7 @@ action_desired = sys.argv[1]
 
 repos = {
     'Catch2': {'path': '/libs/Catch2', 'repo': 'git submodule add -b devel https://github.com/catchorg/Catch2.git'},
-    # 'JUCE': {'path': '/libs/juce', 'repo': 'git submodule add -b develop https://github.com/juce-framework/JUCE.git'}
+    'JUCE': {'path': '/libs/juce', 'repo': 'git submodule add -b develop https://github.com/juce-framework/JUCE.git'}
 }
 
 
