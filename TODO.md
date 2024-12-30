@@ -1,7 +1,7 @@
 # TODO for CMakeCatch2
 
 ## General
-- Scripts so changes to scripts and templates can be updated from Github.
+- Deal with how user can add other repos - maybe a py file created on new project?
 - Finish the basic setup of Desktop so it compiles something.
 - Finish the basic setup of Embedded so it compiles something.
 - Finish the basic setup of Plugin so it compiles something.

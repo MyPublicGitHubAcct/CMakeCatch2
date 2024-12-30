@@ -7,7 +7,7 @@ from helpers import replace_words, get_data
 """
 This script sets up a new project contained in a chosen directory.
 
-Run like python3 scripts/add_project.py ProjectName ProjectType
+Run like python3 CmakeCatch2/scripts/add_project.py ProjectName ProjectType
 
     ProjectName - Any text with no spaces.
     ProjectType - d for Desktop, e for Embedded, l for library, or p for Plugin.
@@ -19,11 +19,22 @@ project_type = sys.argv[2]
 data = get_data(project_type)
 data.update({'project_name': project_name})
 data.update({'replacements': {'PROJECTNAME': str(project_name), 'PROJECT_TYPE': str(project_type)}})
-
 new_project_path = str(os.getcwd()) + data['parent_directory'] + data['project_name']
-templates_path = str(os.getcwd() + data['templates_path'])
+templates_path = str(os.getcwd() + '/CmakeCatch2/' + data['templates_path'])
 
-# top level items
+print(templates_path)
+
+# add git submodules where needed, based on project_type
+libs_directory = 'libs'
+if not os.path.isdir(libs_directory):
+    os.mkdir(libs_directory)
+
+for item in data['submodules']:
+    if not os.path.isdir(str(item['path'])):
+        cmd = "cd libs;" + str(item['repo'])
+        os.system(cmd)
+
+# directory top level items
 shutil.copytree(str(templates_path) + '/root', str(new_project_path), dirs_exist_ok=True)
 
 file_path = str(new_project_path + "/README.md")

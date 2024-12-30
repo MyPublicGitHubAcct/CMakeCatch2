@@ -4,8 +4,13 @@
 
 This template is intended to be a submodule of projects used to organize new Desktop, Embedded, Library, or Plugin (JUCE-based) projects.
 
-As this template is updated, you can update your repos using scripts that have not been added yet. It will update the scripts that way generate new projects are created.  TODO
+Add this to your project like
 
+```zsh
+mkdir MyFancyNewProject && cd "$_"
+git submodule add -b main https://github.com/MyPublicGitHubAcct/CMakeCatch2.git
+python3 CMakeCatch2/scripts/setup_new_repository.py
+```
 
 ## To start a new project
 
@@ -34,19 +39,14 @@ Projects that are not of type Plugin can be tested with
 ./build/{NewProjectName}
 ```
 
-
 ### Submodules
 
-External libraries are Git submodules in the __libs__ directory. 
-
-To configure which submodules will be stored in __libs__, update the _repos_ Python dictionary in ```scripts/submodules.py```.
-
-The following command can be used to add or update libraries by replacing _parameters_ with _add_ or _update_.
+Use to update the Git submodules...
 
 ```zsh
-python3 scripts/submodules.py parameter
+git submodule init
+git submodule update --remote
 ```
-
 
 ## Tools
 
@@ -66,4 +66,3 @@ _IDE_ (not needed but a good to use for the actual projects created in this stru
 - [Another testing article](https://interrupt.memfault.com/blog/unit-testing-basics)
 - [Testing for Embedded](https://dev.blues.io/blog/embedded-c-unit-testing/)
 - [Docker / STM32](https://www.beningo.com/using-docker-to-setup-an-stm32-build-environment/)
-- [name](url)

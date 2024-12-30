@@ -1,4 +1,18 @@
 import os
+import shutil
+
+
+def add_gitignore():
+    src ='CMakeCatch2/.gitignore'
+    dst = '.gitignore'
+    shutil.copy2(src, dst)
+
+
+def add_readme():
+    text = str("# " + os.path.basename(os.getcwd()) + "\n")
+    file = open("README.md","w")
+    file.write(text)
+    file.close()
 
 
 def replace_words(path_to_file, replacements):
@@ -17,32 +31,6 @@ def replace_words(path_to_file, replacements):
             file.write(file_content)
 
 
-def add_submodules(repos):
-    """
-    :param repos: a dictionary like repos = { 'name': {'path': '/libs/foo', 'repo': 'git submodule add ...'},
-    """
-    path = 'libs'
-    if not os.path.isdir(path):
-        os.mkdir(path)
-
-    for name, repo_info in repos.items():
-        if not os.path.isdir(str(repo_info['path'])):
-            cmd = "cd libs;" + str(repo_info['repo'])
-            os.system(cmd)
-
-
-def update_submodules(repos):
-    """
-    :param repos: a dictionary like repos = { 'name': {'path': '/libs/foo', 'repo': 'git submodule add ...'},
-    """
-    for name, repo_info in repos.items():
-        if os.path.isdir(str(repo_info['path'])):
-            cmd = "cd libs;" + \
-                  "git submodule init;" + \
-                  "git submodule update --remote;"
-            os.system(cmd)
-
-
 def get_data(project_type):
     """
     :param project_type: The type of project being built.
@@ -51,6 +39,7 @@ def get_data(project_type):
     parent_directory = ''
     templates_path = ''
     directory_names = ''
+    submodules = ''
     project_cc_content = ''
 
     if project_type == 'd':
@@ -58,6 +47,9 @@ def get_data(project_type):
         parent_directory = '/prj_desktop/'
         templates_path = '/templates/desktop'
         directory_names = ['cmake', 'docs', 'libs', 'python', 'resources', 'scripts', 'src', 'tests']
+        submodules = [
+            {'name': 'Catch2', 'path': '/libs/Catch2', 'repo': 'git submodule add -b devel https://github.com/catchorg/Catch2.git'},
+        ]
         project_cc_content = ''
 
     elif project_type == 'e':
@@ -66,6 +58,9 @@ def get_data(project_type):
         templates_path = '/templates/embedded'
         directory_names = ['bootloader', 'cmake', 'docs', 'drivers', 'dsp', 'hardware_design', 'libs', 'python',
                            'resources', 'scripts', 'tests']
+        submodules = [
+            {'name': 'Catch2', 'path': '/libs/Catch2', 'repo': 'git submodule add -b devel https://github.com/catchorg/Catch2.git'},
+        ]
         project_cc_content = '#include <cstdio>' + '\n' + \
                              'extern "C" {' + '\n' + \
                              '#include "drivers/driver.h"' + '\n' + \
@@ -83,13 +78,21 @@ def get_data(project_type):
         parent_directory = '/prj_library/',
         templates_path = '/templates/library'
         directory_names = ['cmake', 'docs', 'libs', 'python', 'resources', 'scripts', 'src', 'tests']
+        submodules = [
+            {'name': 'Catch2', 'path': '/libs/Catch2', 'repo': 'git submodule add -b devel https://github.com/catchorg/Catch2.git'},
+            {'name': 'JUCE', 'path': '/libs/juce', 'repo': 'git submodule add -b develop https://github.com/juce-framework/JUCE.git'}
+        ]
         project_cc_content = ''
 
     elif project_type == 'p':
         project_type = 'Plugin'
         parent_directory = '/prj_plugin/'
         templates_path = '/templates/plugin'
-        directory_names = ['cmake', 'docs', 'dsp', 'libs', 'python', 'resources', 'scripts', 'src', 'tests']
+        directory_names = ['cmake', 'docs', 'dsp', 'libs', 'python', 'resources', 'root', 'scripts', 'src', 'tests']
+        submodules = [
+            {'name': 'Catch2', 'path': '/libs/Catch2', 'repo': 'git submodule add -b devel https://github.com/catchorg/Catch2.git'},
+            {'name': 'JUCE', 'path': '/libs/juce', 'repo': 'git submodule add -b develop https://github.com/juce-framework/JUCE.git'}
+        ]
         project_cc_content = ''
 
     else:
@@ -100,6 +103,7 @@ def get_data(project_type):
         'parent_directory': parent_directory,
         'templates_path': templates_path,
         'directory_names': directory_names,
+        'submodules': submodules,
         'project_cc_content': project_cc_content,
     }
 
