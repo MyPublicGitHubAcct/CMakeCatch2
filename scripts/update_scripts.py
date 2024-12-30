@@ -2,6 +2,8 @@ from urllib.request import urlretrieve
 
 """
 This script will download the current version of each script and replace the local file.
+
+Run like $ python3 scripts/update_scripts.py
 """
 
 scripts = ['add_project.py', 'helpers.py', 'submodules.py']
