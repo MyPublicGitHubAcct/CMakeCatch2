@@ -7,6 +7,7 @@
 - Finish the basic setup of Plugin so it compiles something.
 - Finish the basic setup of Library so it compiles something.
 - Output projects are able to be compiled using a local environment, Docker, or GitHub Actions.
+- Determine if there is a need for GitHubDownloader.py.
 
 ## Desktop template
 - Make simple hello world.

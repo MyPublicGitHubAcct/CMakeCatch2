@@ -2,7 +2,7 @@
 
 ## Features and Intended Use
 
-This template is intended to be used to organize new Desktop, Embedded, Library, or Plugin (JUCE-based) projects.
+This template is intended to be a submodule of projects used to organize new Desktop, Embedded, Library, or Plugin (JUCE-based) projects.
 
 As this template is updated, you can update your repos using scripts that have not been added yet. It will update the scripts that way generate new projects are created.  TODO
 
