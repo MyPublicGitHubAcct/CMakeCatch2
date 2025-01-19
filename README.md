@@ -2,7 +2,7 @@
 
 ## Features and Intended Use
 
-This template is intended to be a submodule of projects used to organize new Desktop, Embedded, Library, or Plugin (JUCE-based) projects.
+This template is intended to be a _submodule_ of projects used to organize new Desktop, Embedded, Library, or Plugin (JUCE-based) projects.
 
 Add this to your project like
 
@@ -16,7 +16,7 @@ python3 CMakeCatch2/scripts/setup_new_repository.py
 ## To start a new project
 
 ```zsh
-python3 scripts/add_project.py ProjectName ProjectType
+python3 CMakeCatch2/scripts/add_project.py ProjectName ProjectType
 ```
 
 Run the command above and replace ProjectName with your project's name and ProjectType with one of choices below.

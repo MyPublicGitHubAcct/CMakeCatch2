@@ -1,13 +1,16 @@
 # TODO for CMakeCatch2
 
 ## General
-- Deal with how user can add other repos - maybe a py file created on new project?
-- Finish the basic setup of Desktop so it compiles something.
-- Finish the basic setup of Embedded so it compiles something.
-- Finish the basic setup of Plugin so it compiles something.
 - Finish the basic setup of Library so it compiles something.
-- Output projects are able to be compiled using a local environment, Docker, or GitHub Actions.
-- Determine if there is a need for GitHubDownloader.py.
+- Finish the basic setup of Desktop so it compiles something.
+- Finish the basic setup of Plugin so it compiles something.
+- Do the basic setup of Embedded so it compiles something - this should start with a CubeMX project.
+- Deal with how user can add other repos - maybe a py file created on new project?
+- Output projects are compiled using Docker, GitHub Actions, or a local environment.
+
+
+## Library template
+- Make simple hello world, must include catch2 tests.
 
 ## Desktop template
 - Make simple hello world.
@@ -16,7 +19,4 @@
 - Make the embedded project a hello world (blink) that compiles against ARM's GCC toolchain.
 
 ## Plugin template
-- Make simple hello world.
-
-## Library template
 - Make simple hello world.

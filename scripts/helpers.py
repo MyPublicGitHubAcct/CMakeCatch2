@@ -75,7 +75,7 @@ def get_data(project_type):
 
     elif project_type == 'l':
         project_type ='Library'
-        parent_directory = '/prj_library/',
+        parent_directory = '/prj_library/'
         templates_path = '/templates/library'
         directory_names = ['cmake', 'docs', 'libs', 'python', 'resources', 'scripts', 'src', 'tests']
         submodules = [

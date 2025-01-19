@@ -22,8 +22,6 @@ data.update({'replacements': {'PROJECTNAME': str(project_name), 'PROJECT_TYPE': 
 new_project_path = str(os.getcwd()) + data['parent_directory'] + data['project_name']
 templates_path = str(os.getcwd() + '/CmakeCatch2/' + data['templates_path'])
 
-print(templates_path)
-
 # add git submodules where needed, based on project_type
 libs_directory = 'libs'
 if not os.path.isdir(libs_directory):
